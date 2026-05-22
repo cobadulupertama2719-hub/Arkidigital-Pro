@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>
+
+ARKIDIGITAL.PRO
+Developer Apps Studio
+
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#050816;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+.bg1{
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+left:-250px;
+
+top:-200px;
+
+background:
+
+radial-gradient(
+circle,
+#00d4ff30,
+transparent 70%
+);
+
+z-index:-3;
+
+}
+
+.bg2{
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+right:-250px;
+
+bottom:-250px;
+
+background:
+
+radial-gradient(
+circle,
+#7c3aed30,
+transparent 70%
+);
+
+z-index:-3;
+
+}
+
+.grid{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+linear-gradient(
+rgba(255,255,255,.03) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.03) 1px,
+transparent 1px
+);
+
+background-size:40px 40px;
+
+z-index:-2;
+
+}
+
+nav{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+padding:22px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:
+
+rgba(
+5,
+8,
+22,
+.72
+);
+
+backdrop-filter:blur(25px);
+
+border-bottom:
+
+1px solid rgba(
+255,
+255,
+255,
+.05
+);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:800;
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#7c3aed
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.menu{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.menu a{
+
+text-decoration:none;
+
+color:white;
+
+opacity:.8;
+
+}
+
+.hero{
+
+min-height:100vh;
+
+padding:
+
+150px 8%
+90px;
+
+display:grid;
+
+grid-template-columns:
+
+1.2fr
+1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.hero h1{
+
+font-size:78px;
+
+line-height:1.05;
+
+margin-bottom:25px;
+
+}
+
+.hero span{
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#7c3aed
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+color:#a7b2c7;
+
+font-size:18px;
+
+line-height:1.9;
+
+margin-bottom:35px;
+
+max-width:650px;
+
+}
+
+.btns{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:
+
+16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-weight:700;
+
+}
+
+.primary{
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#7c3aed
+);
+
+color:white;
+
+}
+
+.secondary{
+
+background:
+
+rgba(
+255,
+255,
+255,
+.06
+);
+
+color:white;
+
+backdrop-filter:blur(20px);
+
+}
+
+.heroCards{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+2,
+1fr
+);
+
+gap:20px;
+
+}
+
+.card{
+
+padding:28px;
+
+border-radius:28px;
+
+background:
+
+rgba(
+255,
+255,
+255,
+.05
+);
+
+backdrop-filter:blur(25px);
+
+border:
+
+1px solid rgba(
+255,
+255,
+255,
+.08
+);
+
+}
+
+.card h3{
+
+margin-bottom:12px;
+
+}
+
+section{
+
+padding:
+110px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.title h2{
+
+font-size:52px;
+
+margin-bottom:12px;
+
+}
+
+.title p{
+
+color:#9ca8c3;
+
+}
+
+.apps{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+280px,
+1fr
+)
+);
+
+gap:25px;
+
+}
+
+.app{
+
+padding:35px;
+
+border-radius:26px;
+
+background:
+
+rgba(
+255,
+255,
+255,
+.04
+);
+
+border:
+
+1px solid rgba(
+255,
+255,
+255,
+.08
+);
+
+}
+
+.price{
+
+font-size:34px;
+
+font-weight:800;
+
+margin:20px 0;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.heroCards{
+
+grid-template-columns:1fr;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg1"></div>
+
+<div class="bg2"></div>
+
+<div class="grid"></div>
+
+<nav>
+
+<div class="logo">
+
+ARKIDIGITAL
+
+</div>
+
+<div class="menu">
+
+<a href="#apps">
+
+Apps
+
+</a>
+
+<a href="#services">
+
+Services
+
+</a>
+
+<a href="#academy">
+
+Academy
+
+</a>
+
+<a href="#contact">
+
+Contact
+
+</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>
+
+Build The Future
+
+With
+
+<span>
+
+Developer Apps
+
+</span>
+
+</h1>
+
+<p>
+
+Arkidigital adalah studio teknologi yang membangun aplikasi modern, marketplace digital products, jasa pengembangan software, dan academy AI Builder.
+
+</p>
+
+<div class="btns">
+
+<button class="btn primary">
+
+Explore Products
+
+</button>
+
+<button class="btn secondary">
+
+Start Project
+
+</button>
+
+</div>
+
+</div>
+
+<div class="heroCards">
+
+<div class="card">
+
+<h3>
+
+Arki Estimator Pro
+
+</h3>
+
+<p>
+
+Material & Cost Estimation
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Ads Doctor
+
+</h3>
+
+<p>
+
+Marketplace Analytics
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Profit Injector
+
+</h3>
+
+<p>
+
+ROAS Calculator
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+AI Builder Academy
+
+</h3>
+
+<p>
+
+Idea → Prompt → APK
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="apps">
+
+<div class="title">
+
+<h2>
+
+Featured Products
+
+</h2>
+
+<p>
+
+Digital products ecosystem
+
+</p>
+
+</div>
+
+<div class="apps">
+
+<div class="app">
+
+<h3>
+
+Arki Estimator Pro
+
+</h3>
+
+<div class="price">
+
+Rp299K
+
+</div>
+
+<p>
+
+Estimator material bangunan.
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+Ads Doctor
+
+</h3>
+
+<div class="price">
+
+Rp149K
+
+</div>
+
+<p>
+
+Analisa marketplace.
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+Profit Injector
+
+</h3>
+
+<div class="price">
+
+Rp129K
+
+</div>
+
+<p>
+
+ROAS dan profit system.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="title">
+
+<h2>
+
+Development Services
+
+</h2>
+
+<p>
+
+Solusi pengembangan aplikasi untuk bisnis dan digital products
+
+</p>
+
+</div>
+
+<div class="apps">
+
+<div class="app">
+
+<h3>
+
+STARTER
+
+</h3>
+
+<br>
+
+<p>
+
+✓ Landing App
+
+</p>
+
+<br>
+
+<p>
+
+✓ APK Android
+
+</p>
+
+<br>
+
+<p>
+
+✓ Branding Dasar
+
+</p>
+
+<br>
+
+<p>
+
+✓ UI Mobile
+
+</p>
+
+<br>
+
+<div class="price">
+
+Rp1JT+
+
+</div>
+
+<button class="btn primary">
+
+Pesan Sekarang
+
+</button>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+PRO
+
+</h3>
+
+<br>
+
+<p>
+
+✓ Dashboard
+
+</p>
+
+<br>
+
+<p>
+
+✓ Login User
+
+</p>
+
+<br>
+
+<p>
+
+✓ API Integration
+
+</p>
+
+<br>
+
+<p>
+
+✓ Analytics
+
+</p>
+
+<br>
+
+<div class="price">
+
+Rp5JT+
+
+</div>
+
+<button class="btn primary">
+
+Mulai Project
+
+</button>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+ENTERPRISE
+
+</h3>
+
+<br>
+
+<p>
+
+✓ Admin Panel
+
+</p>
+
+<br>
+
+<p>
+
+✓ Multi User
+
+</p>
+
+<br>
+
+<p>
+
+✓ Automation
+
+</p>
+
+<br>
+
+<p>
+
+✓ Custom Flow
+
+</p>
+
+<br>
+
+<div class="price">
+
+Custom
+
+</div>
+
+<button class="btn primary">
+
+Consultation
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ACADEMY ================= -->
+
+<section id="academy">
+
+<div class="title">
+
+<h2>
+
+AI Builder Academy
+
+</h2>
+
+<p>
+
+Belajar membangun aplikasi modern dari ide sampai monetisasi
+
+</p>
+
+</div>
+
+<div class="heroCards">
+
+<div class="card">
+
+<h3>
+
+STEP 1
+
+</h3>
+
+<br>
+
+<p>
+
+Cari ide market
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+STEP 2
+
+</h3>
+
+<br>
+
+<p>
+
+Prompt AI
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+STEP 3
+
+</h3>
+
+<br>
+
+<p>
+
+Build HTML App
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+STEP 4
+
+</h3>
+
+<br>
+
+<p>
+
+Convert APK
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+STEP 5
+
+</h3>
+
+<br>
+
+<p>
+
+Upload Store
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+STEP 6
+
+</h3>
+
+<br>
+
+<p>
+
+Monetisasi
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+
+Arkidigital Numbers
+
+</h2>
+
+<p>
+
+Membangun ekosistem aplikasi dan digital product
+
+</p>
+
+</div>
+
+<div class="apps">
+
+<div class="app">
+
+<center>
+
+<h2>
+
+10+
+
+</h2>
+
+<br>
+
+<p>
+
+Apps Development
+
+</p>
+
+</center>
+
+</div>
+
+<div class="app">
+
+<center>
+
+<h2>
+
+100+
+
+</h2>
+
+<br>
+
+<p>
+
+Potential Clients
+
+</p>
+
+</center>
+
+</div>
+
+<div class="app">
+
+<center>
+
+<h2>
+
+3
+
+</h2>
+
+<br>
+
+<p>
+
+Business Units
+
+</p>
+
+</center>
+
+</div>
+
+<div class="app">
+
+<center>
+
+<h2>
+
+24/7
+
+</h2>
+
+<br>
+
+<p>
+
+Support System
+
+</p>
+
+</center>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ROADMAP ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+
+Roadmap Ecosystem
+
+</h2>
+
+<p>
+
+Visi pengembangan Arkidigital
+
+</p>
+
+</div>
+
+<div class="heroCards">
+
+<div class="card">
+
+<h3>
+
+2026
+
+</h3>
+
+<br>
+
+<p>
+
+Apps Marketplace Launch
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+2027
+
+</h3>
+
+<br>
+
+<p>
+
+AI Academy
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+2028
+
+</h3>
+
+<br>
+
+<p>
+
+SaaS Platform
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+2029
+
+</h3>
+
+<br>
+
+<p>
+
+Automation Studio
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+2030
+
+</h3>
+
+<br>
+
+<p>
+
+AI Ecosystem
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+
+Success Stories
+
+</h2>
+
+<p>
+
+Awal perjalanan digital builder
+
+</p>
+
+</div>
+
+<div class="apps">
+
+<div class="app">
+
+<h3>
+
+App Builder
+
+</h3>
+
+<br>
+
+<p>
+
+“Mampu membangun aplikasi sendiri tanpa tim besar.”
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+Business Owner
+
+</h3>
+
+<br>
+
+<p>
+
+“Proses dari ide menjadi APK jauh lebih cepat.”
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+Developer User
+
+</h3>
+
+<br>
+
+<p>
+
+“Framework belajar lebih jelas dan terarah.”
+
+</p>
+
+</div>
+
+</div>
+
+  </section>
+  <!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+<div class="title">
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<p>
+
+Pertanyaan yang sering ditanyakan
+
+</p>
+
+</div>
+
+<div class="heroCards">
+
+<div class="card">
+
+<h3>
+
+Apakah bisa pesan aplikasi custom?
+
+</h3>
+
+<br>
+
+<p>
+
+Ya. Arkidigital menerima pengembangan aplikasi sesuai kebutuhan bisnis.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Apakah aplikasi langsung jadi APK?
+
+</h3>
+
+<br>
+
+<p>
+
+Ya. Output dapat berupa aplikasi Android siap install.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Apakah tersedia kelas belajar?
+
+</h3>
+
+<br>
+
+<p>
+
+Tersedia academy untuk belajar dari ide sampai monetisasi.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Apakah nanti bisa integrasi payment?
+
+</h3>
+
+<br>
+
+<p>
+
+Bisa. Tahap berikutnya dapat ditambahkan payment gateway.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+
+Build Your Digital Product
+
+</h2>
+
+<p>
+
+Mulai proyek aplikasi atau pelajari cara membangunnya bersama Arkidigital
+
+</p>
+
+</div>
+
+<center>
+
+<div class="btns">
+
+<button class="btn primary"
+onclick="openWA()">
+
+Mulai Konsultasi
+
+</button>
+
+<button class="btn secondary"
+onclick="scrollToTop()">
+
+Kembali Atas
+
+</button>
+
+</div>
+
+</center>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="title">
+
+<h2>
+
+Contact Arkidigital
+
+</h2>
+
+<p>
+
+Developer Apps • Academy • Digital Product Studio
+
+</p>
+
+</div>
+
+<div class="apps">
+
+<div class="app">
+
+<h3>
+
+Email
+
+</h3>
+
+<br>
+
+<p>
+
+hello@arkidigital.pro
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+Website
+
+</h3>
+
+<br>
+
+<p>
+
+www.arkidigital.pro
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>
+
+Services
+
+</h3>
+
+<br>
+
+<p>
+
+Apps Development
+
+<br><br>
+
+Digital Products
+
+<br><br>
+
+Academy
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FLOAT WA ================= -->
+
+<a
+class="waFloat"
+href="javascript:openWA()">
+
+WA
+
+</a>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footerLogo">
+
+ARKIDIGITAL
+
+</div>
+
+<br>
+
+<p>
+
+Developer Apps
+
+•
+
+Technology Studio
+
+•
+
+Marketplace
+
+•
+
+Academy
+
+</p>
+
+<br><br>
+
+<p>
+
+© 2026 Arkidigital Developer Apps
+
+</p>
+
+</footer>
+
+<style>
+
+footer{
+
+padding:80px 8%;
+
+text-align:center;
+
+border-top:
+
+1px solid rgba(
+255,
+255,
+255,
+.05
+);
+
+color:#9da8c2;
+
+}
+
+.footerLogo{
+
+font-size:34px;
+
+font-weight:800;
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#7c3aed
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.waFloat{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+font-weight:800;
+
+color:white;
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#7c3aed
+);
+
+box-shadow:
+
+0 0 30px
+rgba(
+0,
+212,
+255,
+.4
+);
+
+z-index:999;
+
+}
+
+</style>
+
+<script>
+
+function openWA(){
+
+window.open(
+
+"https://wa.me/6280000000000?text=Halo%20Arkidigital%20Saya%20ingin%20konsultasi%20aplikasi",
+
+"_blank"
+
+);
+
+}
+
+function scrollToTop(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+window.addEventListener(
+
+"scroll",
+
+()=>{
+
+const cards=
+
+document.querySelectorAll(
+".card,.app"
+);
+
+cards.forEach(
+
+item=>{
+
+const top=
+
+item.getBoundingClientRect().top;
+
+if(top<window.innerHeight-80){
+
+item.style.transform=
+"translateY(0)";
+
+item.style.opacity=
+"1";
+
+}
+
+}
+
+);
+
+}
+
+);
+
+document.querySelectorAll(
+".card,.app"
+)
+
+.forEach(
+
+x=>{
+
+x.style.transform=
+"translateY(40px)";
+
+x.style.opacity=
+".2";
+
+x.style.transition=
+".7s";
+
+}
+
+);
+
+</script>
+
+</body>
+
+</html>
